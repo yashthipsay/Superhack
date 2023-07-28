@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.17;
 
 contract MultiSig{
     event Deposit(address indexed sender, uint amount);
@@ -46,8 +46,8 @@ contract MultiSig{
         require(_owners.length > 0, "owners required");
         require(_required >0 && required <= owners.length, "invalid required number of owners");
 
-        for(uint i; i<_owners.length; i++){
-            address owner = owners[i];
+        for(uint i = 0; i<_owners.length; i++){
+            address owner = _owners[i];
 
             require(owner != address(0), "invalid owner");
             require(!isOwner[owner], "owner is not unique");
@@ -87,7 +87,7 @@ contract MultiSig{
         
     }
 
-    function execute(uint _txId) external txExists(_txId) not Executed(_txId){
+    function execute(uint _txId) external txExists(_txId) notExecuted(_txId){
         require(_getApprovalCount(_txId) >= required, "approvals < required");
         Transaction storage transaction = transactions[_txId];
         transaction.executed = true;
