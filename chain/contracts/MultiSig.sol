@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
+
+
 contract MultiSig{
     event Deposit(address indexed sender, uint amount);
     event Submit(uint indexed txId);
@@ -18,6 +20,7 @@ contract MultiSig{
     address[] public owners;
     mapping(address => bool) public isOwner;
     uint public required;
+    uint transactionCount;
 
     Transaction[] public transactions;
     mapping(uint => mapping(address=>bool)) public approved;
@@ -98,5 +101,35 @@ contract MultiSig{
 
         emit Execute(_txId);
 
+    }
+
+    function getTransactionIds(bool pending, bool executed) public view returns(uint[] memory){
+        uint count = getTransactionCount(pending, executed);
+        uint[] memory txIds = new uint[](count);
+        uint runningCount = 0;
+        for(uint i=0; i<transactionCount; i++){
+            if(
+                (pending && !transactions[i].executed) || (executed && transactions[i].executed)
+            ) {
+                txIds[runningCount] = i;
+                runningCount++;
+            }
+        }
+        return txIds;
+    }
+
+    function getTransactionCount(
+        bool pending,
+        bool executed
+    ) public view returns (uint){
+        uint count=0;
+        for(uint i=0;i<transactionCount;i++){
+            if(
+                (pending && !transactions[i].executed) || (executed && transactions[i].executed)
+            ) {
+                count++;
+            }
+        }
+        return count;
     }
 }
