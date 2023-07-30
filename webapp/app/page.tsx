@@ -1,6 +1,6 @@
-"use client"
+
 import Image from 'next/image'
-import Connect from '@/components/Connect'
+import Connect from '../components/Connect'
 
 export default function Home() {
   return (
