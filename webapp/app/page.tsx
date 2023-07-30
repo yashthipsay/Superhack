@@ -1,4 +1,6 @@
+"use client"
 import Image from 'next/image'
+import Connect from '@/components/Connect'
 
 export default function Home() {
   return (
@@ -56,6 +58,7 @@ export default function Home() {
             Find in-depth information about Next.js features and API.
           </p>
         </a>
+        <Connect/>
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
