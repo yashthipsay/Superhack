@@ -28,7 +28,8 @@ async function main(){
 let addresses = await getAddresses();
 console.log(addresses);
   const multisig= await ethers.getContractFactory("MultiSig");
-  const multi = await multisig.deploy(addresses,3);
+  console.log(multisig);
+  const multi = await multisig.deploy(addresses,1);
 
   
   console.log('Contract deployed at', multi.target);
