@@ -7,12 +7,12 @@ export default function Connect(){
         
         const provider = new ethers.BrowserProvider(ethereum);
         
-        await ethereum.request({method: 'eth_requestAccounts'});
-        const signer = provider.getSigner();
+        await window.ethereum.request({method: 'eth_requestAccounts'});
+        const signer = await provider.getSigner();
         const contract = new ethers.Contract(address, MultiSig.abi, signer);
         const destination = document.getElementById("destination").value;
         const wei = document.getElementById("wei").value;
-        await contract.submitTransaction(destination, wei, "0x");
+        await contract.submit(destination, wei, "0x");
         
     }
 
