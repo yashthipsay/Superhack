@@ -10,21 +10,21 @@ export default async function setupEvents() {
   
   
 
-  const signer = provider.getSigner();
+  const signer = await provider.getSigner();
   const contract = new ethers.Contract(address, MultiSig.abi, signer);
 
   populateTransactions();
   populateInfo();
 
-  const code = provider.getCode(address);
+  const code = await provider.getCode(address);
   if(code !== "0x") {
-    contract.on('Confirmation', () => {
+    contract.on('Approve', () => {
       populateTransactions();
     });
-    contract.on('Submission', () => {
+    contract.on('Submit', () => {
       populateTransactions();
     });
-    contract.on('Execution', () => {
+    contract.on('Execute', () => {
       populateTransactions();
       populateInfo();
     });
