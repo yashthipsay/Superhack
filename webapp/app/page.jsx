@@ -1,10 +1,28 @@
 "use client"
 import Image from 'next/image'
-import Connect from '../components/Connect'
+import MultiSig from '../../chain/artifacts/contracts/MultiSig.sol/MultiSig.json';
+import {ethers} from 'ethers';
+import {address} from '../__config.json';
+import setupEvents from '../components/SetupEvents';
 
 export default function Home() {
+
+  setupEvents();
+
+  async function newTransaction() {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    await ethereum.request({ method: 'eth_requestAccounts' });
+  
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(address, MultiSig.abi, signer);
+    const destination = document.getElementById("destination").value;
+    const wei = document.getElementById("wei").value;
+    await contract.submit(destination, wei, "0x");
+  }
+  
+
   return (
-    <>
+    <div>
        <div className="contract-interface">
       <h1> Create New Transaction </h1>
       <label>
@@ -17,8 +35,8 @@ export default function Home() {
         <input type="text" id="wei"/>
       </label>
 
-      <div className="button" id="deploy">
-        Create
+      <div className="button" id="deploy" onClick={newTransaction}>
+      Create
       </div>
 
 
@@ -51,9 +69,9 @@ export default function Home() {
       <h1> Existing Transactions </h1>
 
       <div id="container">
-          <Connect/>
+         
       </div>
     </div>
-    </>
+    </div>
   )
 }
