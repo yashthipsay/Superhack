@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import MultiSig from '../../chain/artifacts/contracts/MultiSig.sol/MultiSig.json';
+import MultiSig from '../../chain/artifacts/contracts/MultiSigTwo.sol/MultiSigTwo.json';
 import {ethers} from 'ethers';
 import {address} from '../__config.json';
 import setupEvents from '../components/SetupEvents';

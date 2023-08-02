@@ -1,11 +1,11 @@
 import populateTransactions from "./PopulateTransaction";
 import populateInfo from "./PopulateInfo";
-import MultiSig from '../../chain/artifacts/contracts/MultiSig.sol/MultiSig.json';
+import MultiSig from '../../chain/artifacts/contracts/MultiSigTwo.sol/MultiSigTwo.json';
 import {address} from '../__config';
 const ethers = require('ethers');
 
 export default async function setupEvents() {
-  const provider = new ethers.BrowserProvider(ethereum);
+  const provider = new ethers.BrowserProvider(window.ethereum);
   await ethereum.request({ method: 'eth_requestAccounts' })
   
   
@@ -17,14 +17,15 @@ export default async function setupEvents() {
   populateInfo();
 
   const code = await provider.getCode(address);
+  console.log(code);
   if(code !== "0x") {
-    contract.on('Approve', () => {
+    contract.on('Confirmation', () => {
       populateTransactions();
     });
-    contract.on('Submit', () => {
+    contract.on('Submission', () => {
       populateTransactions();
     });
-    contract.on('Execute', () => {
+    contract.on('Execution', () => {
       populateTransactions();
       populateInfo();
     });
