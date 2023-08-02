@@ -27,9 +27,9 @@ function createFile(address: string | Addressable){
 async function main(){
 let addresses = await getAddresses();
 console.log(addresses);
-  const multisig= await ethers.getContractFactory("MultiSig");
+  const multisig= await ethers.getContractFactory("MultiSigTwo");
   console.log(multisig);
-  const multi = await multisig.deploy(addresses,1);
+  const multi = await multisig.deploy(addresses, 2);
 
   
   console.log('Contract deployed at', multi.target);
