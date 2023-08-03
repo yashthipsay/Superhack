@@ -13,8 +13,10 @@ npx hardhat run scripts/deploy.ts
 ```
 
 ## HOW TO SETUP LOCAL BLOCKCHAIN
---> cd ./chain
---> npx hardhat node  (This will give a list of accounts. Import 2 accounts into the wallet)
---><b>npx hardhat run scripts/deploy.ts --network localhost</b>  (This will create a compile and deploy smart contracts on the blockchain)
+1) <b>cd ./chain</b>
+2) <b>npx hardhat node</b>  (This will give a list of accounts. Import 2 accounts into the wallet)
+3) <b>npx hardhat run scripts/deploy.ts --network localhost</b>  (This will create a compile and deploy smart contracts on the blockchain)
 
 -->Address will be stored in ./__config.json
+4) <b>cd ../webapp</b>
+5) <b>npm run dev</b>
