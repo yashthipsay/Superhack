@@ -20,7 +20,7 @@ npx hardhat run scripts/deploy.ts
 ## HOW TO SETUP LOCAL BLOCKCHAIN
 1) <b>cd ./chain</b>
 2) <b>npx hardhat node</b>  (This will give a list of accounts. Import 2 accounts into Metamask)
-3) <b>npx hardhat run scripts/deploy.ts --network localhost</b>  (This will create a compile and deploy smart contracts on the blockchain)
+3) <b>npx hardhat run scripts/deploy.ts --network localhost</b>  (This will create and compile and deploy smart contracts on the blockchain)
 4)Address will be stored in ./__config.json
 5) <b>cd ../webapp</b>
 6) <b>npm run dev</b>
