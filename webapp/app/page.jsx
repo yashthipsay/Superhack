@@ -17,7 +17,7 @@ export default function Home() {
     const contract = new ethers.Contract(address, MultiSig.abi, signer);
     const destination = document.getElementById("destination").value;
     const wei = document.getElementById("wei").value;
-    await contract.submit(destination, wei, "0x");
+    await contract.submitTransaction(destination, wei, "0x");
   }
   
 
