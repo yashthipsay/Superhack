@@ -10,6 +10,13 @@
     margin: 0px;
 }
 
+.strips-background{
+    z-index: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
 .brand-strip{
     /* background-color: #131457; */
     position: absolute;
