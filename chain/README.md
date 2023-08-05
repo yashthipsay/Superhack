@@ -11,6 +11,8 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
+Running <b>npx hardhat compile will compile chainlink contract and multisig contract</b>
+
 ## ADD HARDHAT NETWORK TO METAMASK
 1) Name: Hardhat
 2) RPC Url: http://127.0.0.1:8545
