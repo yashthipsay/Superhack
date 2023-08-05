@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+.create-transaction-body{
+
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #060123 50%, #131457 100%);
+    margin: 0px;
+}
+
+.brand-strip{
+    /* background-color: #131457; */
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.polysig-logo{
+    position: relative;
+    /* background-color: rgb(7, 133, 244); */
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:start;
+    
+}
+
+.polysig-logo p{
+    color: #FFF;
+    font-family: Zen Dots;
+    font-size: 24.215px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.664px;
+}
+
+.basenet-logo{
+    position: relative;
+    /* background-color: rgb(7, 133, 244); */
+    margin-left: 2rem;
+    width: 9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+    
+}
+
+.worldcoin-logo{
+    position: relative;
+    /* background-color: rgb(7, 133, 244); */
+    margin-left: 2rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+}
+
+.brand-logos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 30rem;
+    margin-right: 3rem;
+    height: 100%;
+}
