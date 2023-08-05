@@ -7,10 +7,12 @@ import {address} from '../__config.json';
 import setupEvents from '../components/SetupEvents';
 
 
-
+function sendCcip(){
+  document.getElementById('ccip').innerHTML = 'A Cross Chain Message was just sent with chainlink.'
+}
 export default function Home() {
 
-  setupEvents();
+ setupEvents();
 
   async function newTransaction() {
     const provider = new ethers.BrowserProvider(window.ethereum);
@@ -24,6 +26,7 @@ export default function Home() {
     await contract.submitTransaction(destination, wei, "0x");
     
     await sender_contract.sendMessage(3734403246176062136n, destination, "Transaction Submitted");
+
   }
   
 
@@ -77,6 +80,13 @@ export default function Home() {
       <div id="container">
          
       </div>
+    </div>
+
+    <div className="update-ccip"></div>
+    <h1>Cross Chain Messaging</h1>
+
+    <div id="ccip">
+      
     </div>
     </div>
   )
