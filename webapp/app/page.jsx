@@ -13,6 +13,7 @@ function sendCcip(){
 export default function Home() {
 
  setupEvents();
+ 
 
   async function newTransaction() {
     const provider = new ethers.BrowserProvider(window.ethereum);
@@ -82,12 +83,6 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="update-ccip"></div>
-    <h1>Cross Chain Messaging</h1>
-
-    <div id="ccip">
-      
-    </div>
     </div>
   )
 }
