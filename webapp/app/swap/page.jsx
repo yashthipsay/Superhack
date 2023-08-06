@@ -54,6 +54,26 @@ import { ethers } from "ethers";
     getWallet(account);
   }
 
+  async function listToTokens(){
+    let response = await fetch('http://10.10.20.38:3000/api/tokens');
+    let tokenListJSON = await response.json();
+    var tokens = tokenListJSON.tokens
+    let parent = document.getElementById("token_list");
+    for (const i in tokens){
+      let div = document.createElement("div");
+      div.className = "token_row";
+      let html = `
+      <img className="token_list_img" width="12%" src="${tokens[i].logoURI}">
+      <span className="token_list_text">${tokens[i].symbol}</span>
+        `;
+      div.innerHTML = html;
+      div.onclick = () => {
+        selectTo(tokens[i]); 
+      };
+      parent.appendChild(div)
+    }
+  }
+
 
         return (
             <Grid.Container gap={1} justify='center'>
@@ -257,6 +277,31 @@ import { ethers } from "ethers";
       color:'#39FF14',
       fontWeight:'bold',
       textShadow:'0px 0px 1px #000000'}} id='defisource'></p>
+      </Row>
+      </Grid>
+      </Row>
+      <Row justify="center">
+      <Grid sm={4}>
+        <Row justify="center">
+      <Card
+        css={{
+          borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+        }}
+      >
+          <Row justify="center" css={{mt:'$2'}}>
+              <Text color="#fff" size={10}>
+                Secured with
+              </Text>
+              <img src="alchemy-white.png" width={"30%"} />
+              </Row>
+              <Row justify="center" css={{mt:'$2'}}>
+            <Text
+              size={20}
+              id="wallet-address"
+              css={{ color: "#39FF14", textShadow: "0px 0px 3px #000000",marginRight: "$2" }}
+            />
+            </Row>
+      </Card>
       </Row>
       </Grid>
       </Row>
