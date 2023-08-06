@@ -24,6 +24,37 @@ import { ethers } from "ethers";
     const [holdup, setHold] = useState('');
     const [wallet, getWallet] = useState([]);
     const [ alert, setAlert ] = useState(false);
+
+    const config = {
+      apiKey: "-Dl1Og8pv6576fBzr0ZEF54MEfiVeIHH",
+      network: Network.OPT_MAINNET,
+  };
+
+  const alchemy = new Alchemy(config);
+
+  var zeroxapi = 'https://api.0x.org';
+
+  var account = null;
+  var web3 = null;
+
+  async function connect() {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    web3 = new Web3(connection);
+    await connection.send("eth_requestAccounts");
+    var accounts = await web3.eth.getAccounts();
+    account = accounts[0];
+    document.getElementById("wallet-address").textContent = account;
+    if (account !== null ){
+      document.getElementById("status").textContent = 'CONNECTED!';
+    }
+    else {
+      document.getElementById("status").textContent = 'CONNECT';
+    }
+    getWallet(account);
+  }
+
+
         return (
             <Grid.Container gap={1} justify='center'>
                  <Button rounded color="primary" onPress={connect} css={{boxShadow:'0px 0px 4px #000000'}}>
