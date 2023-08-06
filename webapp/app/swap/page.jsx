@@ -130,6 +130,45 @@ async function displayBalance(){
     }
   }
 
+  function selectTo(token) {
+    toTrade[toSelectSide] = token;
+    closeHandler();
+    var toName = token.name;
+    var toLogo = token.logoURI;
+    var toAddr = token.address;
+    var toDec = token.decimals;
+    getToName(toName);
+    getToLogo(toLogo);
+    getToAddr(toAddr);
+    getToDec(toDec);
+    displayBalance();
+}
+
+async  function  getPrice(){
+  console.log("Getting Price");
+  if (!faddr || !taddr || !document.getElementById("from_amount").value) return;
+  let  amount = Number(document.getElementById("from_amount").value * 10 ** fdec);
+  const params = {
+    sellToken: faddr,
+    buyToken: taddr,
+    sellAmount: amount,
+  }
+  const response = await fetch(zeroxapi +`/swap/v1/price?${qs.stringify(params)}`);
+  const sources = await fetch(zeroxapi + `/swap/v1/quote?${qs.stringify(params)}`);
+  var swapPriceJSON = await  response.json();
+  console.log(swapPriceJSON)
+  var swapOrders = await sources.json();
+  try {await swapOrders.orders.find(item => {
+   document.getElementById("defisource").innerHTML = item.source;
+  })}
+  catch (error) {
+    document.getElementById("defisource").innerHTML = "Pool Not Available";
+  }
+  var rawvalue = swapOrders.buyAmount / (10 ** tdec)
+  var value = rawvalue.toFixed(2);
+  document.getElementById("to_amount").innerHTML = value
+  document.getElementById("gas_estimate").innerHTML = swapPriceJSON.estimatedGas;
+}
 
         return (
             <Grid.Container gap={1} justify='center'>
