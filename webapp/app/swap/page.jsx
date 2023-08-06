@@ -76,6 +76,40 @@ import { ethers } from "ethers";
   }
 
 
+  function selectFrom(token) {
+    currentTrade[currentSelectSide] = token;
+    closeHandler();
+    var fromName = token.name;
+    var fromLogo = token.logoURI;
+    var fromAddr = token.address;
+    var fromDec = token.decimals;
+    getFromName(fromName);
+    getFromLogo(fromLogo);
+    getFromAddr(fromAddr);
+    getFromDec(fromDec);
+}
+
+async function displayBalance(){
+  const tokenContractAddresses = [faddr];
+  const data = await alchemy.core.getTokenBalances(
+    wallet,
+    tokenContractAddresses
+  )
+  data.tokenBalances.find(item => {
+    let rawbalance = parseInt(item.tokenBalance, 16).toString()
+    let formatbalance = Number(Web3.utils.fromWei(rawbalance))
+    let balance = formatbalance.toFixed(2);
+    if (item.tokenBalance === '0x0000000000000000000000000000000000000000000000000000000000000000') {
+      document.getElementById("get_balance").innerHTML = '0.00'
+    }
+    else {
+      document.getElementById("get_balance").innerHTML = balance
+    }
+
+   })
+}
+
+
   async function listToTokens(){
     let response = await fetch('https://tokens.coingecko.com/uniswap/all.json');
     let tokenListJSON = await response.json();
