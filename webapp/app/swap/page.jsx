@@ -4,8 +4,9 @@ import { Card, Col, Row, Button, Text,
     Modal, useModal, Avatar, Grid, Spacer } from "@nextui-org/react";
     import React from 'react';
     import Web3 from 'web3';
-    
+    import qs from 'qs';
     import Erc20 from '../../engine/erc20.json';
+    import Web3Modal from "web3modal";
 import {useState, useEffect} from "react";
 import {Alchemy, Network} from "alchemy-sdk";
 import { ethers } from "ethers";
@@ -32,10 +33,54 @@ import { ethers } from "ethers";
 
   const alchemy = new Alchemy(config);
 
-  var zeroxapi = 'https://api.0x.org';
+  var zeroxapi = 'https://optimism.api.0x.org/';
+
+  useEffect(() => {
+  }, [getFromLogo,getFromName,getFromAddr,getFromDec])
+
+  useEffect(() => {
+  }, [getToLogo,getToName,getToAddr])
+
+  useEffect(() => {
+    const delayDebounce= setTimeout(() => {
+      getPrice();
+    }, 1000)
+    return () => clearTimeout(delayDebounce)
+  }, [holdup])
+
+  let currentTrade = {};
+  let currentSelectSide = null;
+  let toTrade = {};
+  let toSelectSide = null;
+
+  const sendAlert = () => setAlert(true);
+
+    const fromHandler = (side) => {
+      if (wallet.includes('0x')) {
+         setVisible(true);
+         currentSelectSide = side;
+         listFromTokens();
+      }
+      else {
+        sendAlert();
+      }
+    }
+
+    const toHandler = (side) => {
+          setVisible(true);
+          toSelectSide = side;
+          listToTokens();
+          getPrice()
+    };
 
   var account = null;
   var web3 = null;
+
+  const closeHandler = () => {
+    setVisible(false);
+    setAlert(false);
+    console.log("closed");
+  };
 
   async function connect() {
     const web3Modal = new Web3Modal();
@@ -97,7 +142,7 @@ async function displayBalance(){
   )
   data.tokenBalances.find(item => {
     let rawbalance = parseInt(item.tokenBalance, 16).toString()
-    let formatbalance = Number(Web3.utils.fromWei(rawbalance))
+    let formatbalance = Number(ethers.formatEther(rawbalance))
     let balance = formatbalance.toFixed(2);
     if (item.tokenBalance === '0x0000000000000000000000000000000000000000000000000000000000000000') {
       document.getElementById("get_balance").innerHTML = '0.00'
@@ -153,9 +198,17 @@ async  function  getPrice(){
     buyToken: taddr,
     sellAmount: amount,
   }
-  const response = await fetch(zeroxapi +`/swap/v1/price?${qs.stringify(params)}`);
-  const sources = await fetch(zeroxapi + `/swap/v1/quote?${qs.stringify(params)}`);
-  var swapPriceJSON = await  response.json();
+  const response = await fetch(zeroxapi +`swap/v1/price?${qs.stringify(params)}`,{
+    headers: {
+      "0x-api-key": "b3443163-d097-496a-a8d9-5cb11980666b"
+    },
+  });
+  const sources = await fetch(zeroxapi + `swap/v1/quote?${qs.stringify(params)}`,{
+    headers: {
+      "0x-api-key": "b3443163-d097-496a-a8d9-5cb11980666b"
+    },
+  });
+  var swapPriceJSON = await response.json();
   console.log(swapPriceJSON)
   var swapOrders = await sources.json();
   try {await swapOrders.orders.find(item => {
@@ -169,6 +222,42 @@ async  function  getPrice(){
   document.getElementById("to_amount").innerHTML = value
   document.getElementById("gas_estimate").innerHTML = swapPriceJSON.estimatedGas;
 }
+
+async function swapit() {
+  if (!faddr || !taddr || !document.getElementById("from_amount").value) return;
+  const web3Modal = new Web3Modal();
+  const connection = await web3Modal.connect();
+  web3 = new Web3(connection);
+  const provider = new ethers.providers.Web3Provider(connection);
+  const signer = provider.getSigner();
+  const userWallet = await signer.getAddress();
+  let  amount = Number(document.getElementById("from_amount").value * 10 ** fdec);
+  const params = {
+    sellToken: faddr,
+    buyToken: taddr,
+    sellAmount: amount,
+  }
+  const fromTokenAddress = faddr;
+  const getquote = await fetch(zeroxapi + `swap/v1/quote?${qs.stringify(params)}`);
+  var quote = await getquote.json()
+  var proxy = quote.allowanceTarget
+  var amountstr = amount.toString();
+  const ERC20Contract = new ethers.Contract(fromTokenAddress, Erc20, signer);
+  const approval = await ERC20Contract.approve(proxy, amountstr)
+  await approval.wait()
+  const txParams = {
+    ...quote,
+    from: userWallet,
+    to: quote.to,
+    value: (quote.value).toString(16),
+    gasPrice: null,
+    gas: quote.gas,
+  }
+  await ethereum.request({
+    method: 'eth_sendTransaction',
+    params: [txParams],
+  });
+  }
 
         return (
             <Grid.Container gap={1} justify='center'>
@@ -402,4 +491,4 @@ async  function  getPrice(){
       </Row>
             </Grid.Container>
             )
-    }
+      }
