@@ -136,6 +136,44 @@ import { Card, Col, Row, Button, Text,
           </Button>
         </Modal.Footer>
       </Modal>
+      <Row justify="center">
+        <img src="arrow.png" width={"2%"} />
+      </Row>
+      <Row justify="center">
+      <Grid sm={4}>
+      <Card
+        variant="bordered" css={{
+          color: "white",
+          opacity: "80%",
+          fontFamily: "SF Pro Display",
+          fontWeight: "300",
+          fontSize: "30px",
+          textShadow: "0px 0px 2px #000000",
+          boxShadow: "0px 0px 4px #39FF14",
+        }}
+      >
+          <Col>
+          <Text type='text'
+            size="$4xl"
+            css={{fontFamily:'SF Pro Display',color:'white',
+            textShadow:"0px 0px 3px #39FF14", ml:'$2'}} 
+            className="number"
+            color="default" id="to_amount" />
+          </Col>
+          </Card>
+          <Spacer />
+          <Col>
+          <a onClick={toHandler}>
+            <Text size='$3xl' css={{fontFamily:'SF Pro Display',
+            textShadow:'0px 0px 1px #000000',
+            fontWeight:'400',
+            color:'white',
+            ml:'$10',
+            }}><img src={tlogo} style={{width:'50px'}}/>{' '+tname}</Text>
+            </a>
+            </Col>
+        </Grid>
+      </Row>
             </Grid.Container>
             )
     }
