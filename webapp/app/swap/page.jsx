@@ -33,7 +33,7 @@ import { ethers } from "ethers";
 
   const alchemy = new Alchemy(config);
 
-  var zeroxapi = 'https://optimism.api.0x.org/';
+  var zeroxapi = 'https://api.0x.org/';
 
   useEffect(() => {
   }, [getFromLogo,getFromName,getFromAddr,getFromDec])
@@ -228,9 +228,9 @@ async function swapit() {
   const web3Modal = new Web3Modal();
   const connection = await web3Modal.connect();
   web3 = new Web3(connection);
-  const provider = new ethers.providers.Web3Provider(connection);
-  const signer = provider.getSigner();
-  const userWallet = await signer.getAddress();
+  const provider = new ethers.BrowserProvider(connection);
+  const signer = await provider.getSigner();
+  const userWallet = wallet;
   let  amount = Number(document.getElementById("from_amount").value * 10 ** fdec);
   const params = {
     sellToken: faddr,
