@@ -54,8 +54,30 @@ import { ethers } from "ethers";
     getWallet(account);
   }
 
+
+  async function listFromTokens(){
+    let response = await fetch('https://tokens.coingecko.com/uniswap/all.json');
+    let tokenListJSON = await response.json();
+    var tokens = tokenListJSON.tokens
+    let parent = document.getElementById("token_list");
+    for (const i in tokens){
+      let div = document.createElement("div");
+      div.className = "token_row";
+      let html = `
+      <img className="token_list_img" width="12%" src="${tokens[i].logoURI}">
+        <span className="token_list_text">${tokens[i].symbol}</span>
+        `;
+      div.innerHTML = html;
+      div.onclick = () => {
+        selectFrom(tokens[i]);
+      };
+      parent.appendChild(div)
+    }
+  }
+
+
   async function listToTokens(){
-    let response = await fetch('http://10.10.20.38:3000/api/tokens');
+    let response = await fetch('https://tokens.coingecko.com/uniswap/all.json');
     let tokenListJSON = await response.json();
     var tokens = tokenListJSON.tokens
     let parent = document.getElementById("token_list");
