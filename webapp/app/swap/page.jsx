@@ -174,6 +174,42 @@ import { Card, Col, Row, Button, Text,
             </Col>
         </Grid>
       </Row>
+      <Grid sm={4}>
+      <Row justify="center">
+        
+      <Card isPressable css={{backgroundColor:'#39FF14'}} onPress={swapit}>
+                <Text
+                  css={{display:'flex',justifyContent:'center',color: "black", textShadow:'0px 0px 2px #000000' }}
+                  size="$3xl"
+                  weight="bold"
+                  transform="uppercase">
+                 SWAP !
+                </Text>
+              </Card>
+             
+              </Row>
+              </Grid>
+      <Row justify="center">
+      <Grid sm={4}>
+      <Row>
+      <Text size={20} css={{marginLeft:'$5', color:'white'}} >Gas Estimate: </Text> 
+      <p style={{fontFamily:'SF Pro Display',
+      fontSize:'24px',
+      marginLeft:'4px', 
+      color:'#39FF14',fontWeight:'bold',
+      textShadow:'0px 0px 1px #000000'}} id='gas_estimate'></p>
+      </Row>
+      <Row>
+      <Text size={24} css={{marginLeft:'$5', color:'white'}} >LP Provider: </Text> 
+      <p style={{fontFamily:'SF Pro Display',
+      fontSize:'25px', 
+      marginLeft:'4px', 
+      color:'#39FF14',
+      fontWeight:'bold',
+      textShadow:'0px 0px 1px #000000'}} id='defisource'></p>
+      </Row>
+      </Grid>
+      </Row>
             </Grid.Container>
             )
     }
