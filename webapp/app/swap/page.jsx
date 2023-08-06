@@ -3,11 +3,30 @@ import { Input } from "@nextui-org/react";
 import { Card, Col, Row, Button, Text, 
     Modal, useModal, Avatar, Grid, Spacer } from "@nextui-org/react";
     import React from 'react';
+    import Web3 from 'web3';
+    
+    import Erc20 from '../../engine/erc20.json';
+import {useState, useEffect} from "react";
+import {Alchemy, Network} from "alchemy-sdk";
+import { ethers } from "ethers";
+
 
     export default function DefiSwap(){
+      const { visible, setVisible } = useModal();
+    const [flogo, getFromLogo] = useState([]);
+    const [fname, getFromName] = useState(['Swap From']);
+    const [faddr, getFromAddr] = useState([]);
+    const [fdec, getFromDec] = useState([]);
+    const [tlogo, getToLogo] = useState([]);
+    const [tname, getToName] = useState(['Swap To']);
+    const [taddr, getToAddr] = useState([]);
+    const [tdec, getToDec] = useState([]);
+    const [holdup, setHold] = useState('');
+    const [wallet, getWallet] = useState([]);
+    const [ alert, setAlert ] = useState(false);
         return (
             <Grid.Container gap={1} justify='center'>
-                 <Button rounded color="primary" css={{boxShadow:'0px 0px 4px #000000'}}>
+                 <Button rounded color="primary" onPress={connect} css={{boxShadow:'0px 0px 4px #000000'}}>
                 <Text
                   css={{ color: "white" }}
                   size={16}
