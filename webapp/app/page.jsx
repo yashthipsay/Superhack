@@ -25,9 +25,12 @@ export default function Home() {
     const destination = document.getElementById("destination").value;
     const wei = document.getElementById("wei").value;
     await contract.submitTransaction(destination, wei, "0x");
+<<<<<<< HEAD
+=======
     
     await sender_contract.sendMessage(3734403246176062136n, destination, "Transaction Submitted");
 
+>>>>>>> e14fd7f31acb914a898b6968c0114e7911509949
   }
   
 
