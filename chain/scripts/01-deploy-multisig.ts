@@ -1,5 +1,5 @@
 import {ethers} from 'hardhat';
-import { MultiSig__factory } from '../typechain-types';
+import { MultiSigTwo__factory } from '../typechain-types';
 import { Addressable } from 'ethers';
 const hre = require('hardhat');
 const fs = require('fs');
