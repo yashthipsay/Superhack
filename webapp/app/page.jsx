@@ -6,7 +6,6 @@ import {ethers} from 'ethers';
 import {address} from '../__config.json';
 import setupEvents from '../components/SetupEvents';
 
-
 function sendCcip(){
   document.getElementById('ccip').innerHTML = 'A Cross Chain Message was just sent with chainlink.'
 }
