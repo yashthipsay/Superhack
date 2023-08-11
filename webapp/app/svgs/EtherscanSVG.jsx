@@ -4,11 +4,11 @@ const EtherscanSVG = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="210" height="49" viewBox="0 0 210 49" fill="none">
       <g clip-path="url(#clip0_142_193)">
-        <mask id="mask0_142_193" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="49">
+        <mask id="mask0_142_193" style={{"mask-type":"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="49">
           <path d="M209.714 0.809387H0.845703V48.367H209.714V0.809387Z" fill="white"/>
         </mask>
         <g mask="url(#mask0_142_193)">
-          <mask id="mask1_142_193" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="49">
+          <mask id="mask1_142_193" style={{"mask-type":"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="49">
             <path d="M209.331 0.809326H0.84668V48.2262H209.331V0.809326Z" fill="white"/>
           </mask>
           <g mask="url(#mask1_142_193)">
