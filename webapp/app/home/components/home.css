@@ -6,7 +6,7 @@
 }
 
 .home-body{
-  
+  position: relative;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   display: flex;
@@ -74,6 +74,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
     /* background-color: #a4181847; */
 }
 .nav-link{
@@ -98,7 +99,7 @@
     color: #FFF;
     text-align: center;
     font-family: Montserrat;
-    font-size: 56.842px;
+    font-size: 50.842px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -108,7 +109,7 @@
     margin: 0px;
     color: #62A6EC;
     font-family: Montserrat;
-    font-size: 56.842px;
+    font-size: 50.842px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -121,8 +122,8 @@
     justify-content: center;
     gap: 1rem;
 
-    width: 530px;
-    height: 65px;
+    width: 520px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 8px;
     margin-top: 1rem;
@@ -132,7 +133,7 @@
     color: #FFFCFC;
     text-align: center;
     font-family: Montserrat;
-    font-size: 34.454px;
+    font-size: 30.454px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -171,6 +172,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 2rem;
 }
 
 .sponsors-list{
@@ -178,7 +180,5 @@
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 1rem, 2rem;
-    margin-top: 1rem;
-    
+    padding: 1rem, 2rem;    
 }
