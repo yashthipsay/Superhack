@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Navbar from './Navbar.jsx'
 import BrandingSec from './BrandingSec.jsx'
@@ -5,13 +7,16 @@ import Sponsfooter from './Sponsfooter.jsx'
 import SwapModal from './SwapModal.jsx'
 
 
+
 const Home = () => {
+
+  const [showModal, setShowModal] = React.useState();
   return (
     <div className='home-body' >
         <Navbar />
         <BrandingSec />
         <Sponsfooter />
-        <SwapModal />
+        { showModal && <SwapModal />}
     </div>
   )
 }
