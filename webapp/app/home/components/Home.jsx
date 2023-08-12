@@ -10,7 +10,8 @@ import SwapModal from './SwapModal.jsx'
 
 const Home = () => {
 
-  const [showModal, setShowModal] = React.useState();
+  const [showModal, setShowModal] = React.useState(true);
+
   return (
     <div className='home-body' >
         <Navbar />
