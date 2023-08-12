@@ -10,7 +10,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/cloud-station-compressed.glb')
+  const { nodes, materials, animations } = useGLTF('./cloudStationCompressed.glb')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -525,4 +525,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/cloud-station-compressed.glb')
+useGLTF.preload('./cloudStationCompressed.glb')
