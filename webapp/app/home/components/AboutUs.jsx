@@ -16,10 +16,10 @@ const AboutUs = () => {
         <div className="about-us-header">ABOUT US</div>
 
       <div className="arrange-member-cards">
-        <MemberCard imgSrc={'images/yash.jpeg'} />
-        <MemberCard imgSrc={'images/bhavya.jpeg'}  />
-        <MemberCard imgSrc={'images/shreyash.jpeg'}  />
-        <MemberCard imgSrc={'images/soham.jpeg'} />
+        <MemberCard imgSrc={'images/yash.jpeg'} info={'Yash Thipsay'} />
+        <MemberCard imgSrc={'images/bhavya.jpeg'} info={'Bhavya Shah'} />
+        <MemberCard imgSrc={'images/shreyash.jpeg'} info={'Shreyash Bele'} />
+        <MemberCard imgSrc={'images/soham.jpeg'} info={'Soham Panchal'} />
       </div>
     </div>
   )

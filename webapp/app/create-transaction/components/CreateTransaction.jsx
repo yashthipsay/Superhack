@@ -5,6 +5,7 @@ import BrandStrip from './BrandStrip'
 import { Transaction } from 'ethers'
 
 import TransactionPanel from './TransactionPanel'
+import ExistingTransactions from './ExistingTransactions'
 
 const CreateTransaction = () => {
   return (
@@ -13,6 +14,7 @@ const CreateTransaction = () => {
         <img className='strips-background' src="backgroud_designs/Union.png"  />
         <BrandStrip />
         <TransactionPanel />
+        <ExistingTransactions />
     </div>
   )
 }
