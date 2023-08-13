@@ -15,6 +15,7 @@ const BrandingSec = ({showModal, setShowModal}) => {
         <div className='polysig-slogan'>Seamless Web3 Transactions with <span>POLYSIG</span></div>
         <Link href='/create-transaction' ><button  className='get-started-btn'>Create new Transaction <Gonextsymbol /> </button></Link>
         <div className='swap-toggle-btn' onClick={() => {setShowModal(!showModal)}} >Swap with Optimism</div>
+        <Link href='/uniswap_pools' ><div className="swap-toggle-btn">Real time analytics!</div></Link>
     </div>
   )
 }

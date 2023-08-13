@@ -2,6 +2,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+import './uniswap.css'
+import TheGraph from '../svgs/TheGraph';
+
 
 const URL = 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3';
 
@@ -36,7 +39,8 @@ export default function Home() {
     }, []);
 
     return (
-        <div>
+        <div className='uniswap-container'>
+            <TheGraph />
             <h1>Top 10 Uniswap V3 Pools</h1>
             <table>
                 <thead>

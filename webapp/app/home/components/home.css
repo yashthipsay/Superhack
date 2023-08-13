@@ -145,6 +145,16 @@
 .swap-toggle-btn{
     cursor: pointer;
     transition:all 0.3s ease-in-out;
+    background-color: #000c1956;
+    border-radius: 12px;
+    width: 15rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    color: #000c19;
 }
 .swap-toggle-btn:hover{
     /* background: linear-gradient(180deg, rgba(82, 125, 236) 0%, rgba(222, 112, 201) 100%); */
