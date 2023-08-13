@@ -5,13 +5,18 @@ Command: npx gltfjsx@6.1.4 cloud-station-compressed.glb
 
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./cloudStationCompressed.glb')
+  const { nodes, materials, animations } = useGLTF('Model/cloud-station-compressed.glb')
   const { actions } = useAnimations(animations, group)
+  console.log(actions)
+
+  useEffect(() => {
+    actions['Take 001'].play();
+  }, []);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
@@ -525,4 +530,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('./cloudStationCompressed.glb')
+useGLTF.preload('Model/cloud-station-compressed.glb')

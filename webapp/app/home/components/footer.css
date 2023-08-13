@@ -2,6 +2,7 @@
 
 
 .footer-body{
+    z-index: 1;
     display: grid;
     grid-template-columns: auto auto;
     background: #101010;

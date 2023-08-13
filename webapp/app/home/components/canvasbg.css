@@ -1,7 +1,9 @@
-.threedenv-body{
-    position:absolute;
-    z-index: -1;
-    height: 100vh;
-    width: 100vw;
-    
+
+.threed-canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
+
+

@@ -5,7 +5,6 @@ import Navbar from './Navbar.jsx'
 import BrandingSec from './BrandingSec.jsx'
 import Sponsfooter from './Sponsfooter.jsx'
 import SwapModal from './SwapModal.jsx'
-// import CanvasBG from './CanvasBG.jsx'
 
 
 
@@ -17,7 +16,6 @@ const Home = () => {
         <Navbar />
         <BrandingSec />
         <Sponsfooter />
-        {/* <CanvasBG /> */}
         { showModal && <SwapModal />}
     </div>
   )
