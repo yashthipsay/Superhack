@@ -14,9 +14,9 @@ const Home = () => {
   return (
     <div className='home-body' >
         <Navbar />
-        <BrandingSec />
+        <BrandingSec showModal={showModal} setShowModal={setShowModal} />
         <Sponsfooter />
-        { showModal && <SwapModal />}
+        { showModal && <SwapModal showModal={showModal} setShowModal={setShowModal} />}
     </div>
   )
 }

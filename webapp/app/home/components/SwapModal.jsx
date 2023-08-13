@@ -4,11 +4,11 @@ import './swapmodal.css'
 import SwapSVG from '../../svgs/SwapSVG'
 import EtherSVG from '../../svgs/EtherSVG'
 
-const SwapModal = () => {
+const SwapModal = ({showModal, setShowModal}) => {
   return (
     <div className='swap-body'>
       <div className="top-bar">
-        <button>X</button>
+        <button onClick={()=>{setShowModal(!showModal)}} >X</button>
       </div>
 
       <div className="swap-from-to">

@@ -44,6 +44,11 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    transition:all 0.3s ease-in-out;
+}
+.top-bar button:hover{
+    color: #FF0420;
+    filter: drop-shadow(7px 7px 7px #FF0420);
     
 }
 
