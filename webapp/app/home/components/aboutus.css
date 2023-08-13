@@ -57,3 +57,29 @@
   /* background: rgba(183, 183, 183, 0.37); */
   background-color: #0b0029b3;
 }
+
+.pie-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25rem;
+  height: 20rem;
+  width: 90%;
+  background-color: rgba(29, 26, 30, 0.87);
+  border-radius: 12px;
+}
+
+.pie-wrap-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+  width: 100%;
+  margin-top: 20rem;
+  /* background-color: rgba(29, 26, 30, 0.87); */
+  /* border-radius: 12px; */
+}
