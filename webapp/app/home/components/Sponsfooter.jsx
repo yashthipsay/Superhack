@@ -14,7 +14,7 @@ const Sponsfooter = () => {
         <div className="sponsors-list">
             <BasenetSVG />
             {/* <WorldcoinSVG /> */}
-            {/* <TheGraph /> */}
+            <TheGraph />
             <EtherscanSVG />
             <ChainlinkSVG />
             <OptimismSVG />

@@ -10,13 +10,17 @@ import SwapModal from './SwapModal.jsx'
 
 const Home = () => {
 
+
   const [showModal, setShowModal] = React.useState(false);
+
   return (
     <div className='home-body' >
         <Navbar />
         <BrandingSec showModal={showModal} setShowModal={setShowModal} />
         <Sponsfooter />
+
         { showModal && <SwapModal showModal={showModal} setShowModal={setShowModal} />}
+
     </div>
   )
 }

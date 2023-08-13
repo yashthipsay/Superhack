@@ -18,14 +18,14 @@ const TheGraph = () => {
         width: '49.484px',
         height: '74.226px',
         flexShrink: 0,
-        backgroundImage: `url('../../public/logos/the-graph/the-graph-logo.png')`,
+        backgroundImage: `url('logos/the-graph/the-graph-logo.png')`,
     }
 
     const graphText = {
         width: '65.595px',
         height: '64.228px',
         flexShrink: 0,
-        backgroundImage: `url('../../public/logos/the-graph/the-graph-text.png')`,
+        backgroundImage: `url('logos/the-graph/the-graph-text.png')`,
     }
 
 

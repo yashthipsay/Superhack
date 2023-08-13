@@ -2,6 +2,8 @@ import React, {useS} from 'react'
 import Link from 'next/link'
 
 import Gonextsymbol from '../../svgs/Gonextsymbol'
+import { redirect } from 'next/dist/server/api-utils'
+
 
 
 
