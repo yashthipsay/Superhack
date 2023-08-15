@@ -1,0 +1,46 @@
+.uniswap-container {
+    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(90deg, #060123 50%, #131457 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+
+    font-size: 1rem;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+thead {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+}

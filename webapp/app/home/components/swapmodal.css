@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Zen+Dots&display=swap');
+
+.swap-body{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+    height: 700px;
+    flex-shrink: 0;
+    padding-bottom: 0.8rem;
+
+    border-radius: 31.285px;
+    background: rgba(96, 110, 130, 0.50);
+    backdrop-filter: blur(5.028000354766846px);
+}
+
+.top-bar{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    /* background-color: rgb(114, 67, 4); */
+    bottom: calc(100% - 2rem);
+}
+
+.top-bar button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-left: 0.5rem;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    transition:all 0.3s ease-in-out;
+}
+.top-bar button:hover{
+    color: #FF0420;
+    filter: drop-shadow(7px 7px 7px #FF0420);
+    
+}
+
+.swap-from-to{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    /* background-color: aqua; */
+}
+
+.swap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 80%;
+    background-color: rgba(16, 16, 16, 0.74);;
+    border-radius: 12px;
+}
+
+.swap-bar{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    /* background-color: rgba(224, 15, 15, 0.909); */
+    border-radius: 12px;
+}
+.from{
+    width: 58.064px;
+    height: 24.102px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20.176px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: .5rem;
+}
+.available{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 2rem;
+}
+
+.available-label{
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12.49px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.available-amount{
+    display: flex;
+    flex-direction: row;
+    color: #8A55E1;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14.572px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.max{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.581px;
+    background: rgba(88, 88, 88, 0.50);
+    width: 2.7rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+
+    color: #F9F9F9;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: .5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.chain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+    /* background-color: rgba(15, 224, 95, 0.909); */
+    border-radius: 12px;
+}
+.chain-options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 35%;
+}
+.chain-icon{
+    background-color: rgba(88, 88, 88, 0.50);
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 100%;
+    margin-left: 0.5rem;
+}
+.chain-name{
+    background-color: transparent;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+    height: 100%;
+    /* background-color: rgba(88, 88, 88, 0.50); */
+    border-radius: 12px;
+}
+.number{
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 60%;
+    height: 70%;
+    background-color: transparent;
+    border: 2px solid #898686;
+    border-radius: 12px;
+    padding: 0.3rem;
+}
+.dollar-conversion{
+    color: #898686;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 9.415px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.to-amount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 100%;
+    /* background-color: rgba(88, 88, 88, 0.50); */
+    border-radius: 12px;
+}
+.weth{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #898686;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.swap-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 8rem;
+    width: 92%;
+    border-radius: 12px;
+    padding: 1rem;
+}
+.grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 30%;
+    /* background-color: beige; */
+}
+
+
+.grid-text{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* background-color: aquamarine; */
+    width: 50%;
+}
+.bold{
+    align-items: start;
+    width: 100%;
+    font-weight: 600;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.sub{
+    font-size: 0.6rem;
+}
+
+.swap-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 27px;
+    background: #8A55E1;
+    box-shadow: 4px 4px 17px -3px rgba(0, 0, 0, 0.25);
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.real-time-stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 92%;
+    height: 40%;
+    border-radius: 12px;
+    background-color:  rgba(29, 26, 30, 0.87);
+}
+
+.stats-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 35%;
+    padding: 0.5rem 0.3rem  0.5rem 0.3rem;
+    /* background-color: aquamarine; */
+}
+
+.stats-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 65%;
+    /* background-color: beige; */
+}
+.stats-top-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 55%;
+    height: 100%;
+    /* background-color: rgb(131, 255, 127); */
+}
+
+.curr-name{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    text-align: start;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 90%;
+}
+
+.curr-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 90%;
+    height: 45%;
+    gap:0.5rem;
+    /* background-color: rgb(168, 28, 28); */
+}
+.curr-amount-dollar{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.curr-amount-btc{
+    color: #6B6B6B;
+    font-family: Montserrat;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.curr-status{
+    color: #FF0420;
+    font-family: Montserrat;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.vertical-divider{
+    height: 90%;
+    width: 0.1rem;
+    background-color: rgba(95, 95, 95, 0.88);
+}
+
+.market-cap-title{
+    
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: start;
+
+    width: 90%;
+}
+.market-cap-amnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap:0.3rem;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: start;
+
+    width: 90%;
+}
+
+.horizontal-divider{
+    width: 95%;
+    height: 0.1rem;
+    background-color: rgba(95, 95, 95, 0.88);
+}
+
+.stats-body-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    /* background-color: rgb(131, 255, 127); */
+}
+.sbl-title{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
+    width: 100%;
+    padding-left: 1rem;
+}
+.sbr-title{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.blocks-table{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70%;
+    /* background-color: rgb(127, 249, 255); */
+    padding-left: 1rem;
+}
+
+.blocks-table-row{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(127, 138, 255); */
+}
+
+.row-left{
+    display:flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    width: 47%;
+    height: 100%;
+    /* background-color: rgb(92, 39, 3); */
+}
+
+.row-right{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 47%;
+    height: 100%;
+    padding-right: 1rem;
+    /* background-color: rgb(92, 3, 70); */
+}
+.rl-info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+
+}
+
+.rl-info-r{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin-left: 2rem;
+
+}
+
+.rl-info-amnt{
+    color: #8DC0F5;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
+}
+
+.rl-info-duration{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: start;
+}
+
+.upper-part{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+    width: 100%;
+    /* background-color: rgb(147, 211, 175); */
+}
+
+
+.fee-receipt{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bever-build{
+    color: #62A6EC;
+    font-family: Montserrat;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

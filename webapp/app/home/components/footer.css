@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Zen+Dots&display=swap');
+
+
+.footer-body{
+    z-index: 10;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    background: #101010;
+    width: 100vw;
+    height: 400px;
+    flex-shrink: 0;
+}
+
+.footer-left{
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+.footer-right{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 8rem;
+    /* background-color: aquamarine; */
+}
+
+.footer-logo-text{
+    color: #FFF;
+    font-family: Zen Dots;
+    font-size: 24.215px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.664px;
+}
+
+.footer-greeting{
+    width: 548px;
+    height: 50px;
+    flex-shrink: 0;
+    /* background-color: #9616167f; */
+    margin-top: 3rem;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.72px;
+}
+
+.social-handles{
+    /* background-color: azure; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 35rem;
+    height: 8rem;
+    margin-bottom: 3rem;
+    
+}
+
+.connect-invitation{
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 2.56px;
+}
+
+.social-icons{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Zen+Dots&display=swap');
+
+:root{
+    --tri-gradient-bg-1: radial-gradient(circle at top left, #057aa864, #000c19 55%), radial-gradient(ellipse at 90% 100%, #4e0124, #000c19  40%);
+    --tri-gradient-bg-2: radial-gradient(circle at bottom left, #057aa864, #000c19 55%), radial-gradient(ellipse at 90% 0%, #4e0124, #000c19  40%);
+}
+
+.about-us-body{
+  z-index: 2;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  /* background: var(--tri-gradient-bg-2); */
+  background: linear-gradient(180deg, #00000000 0%, #000000e6 75%);
+  background-color: transparent;
+  background-blend-mode: screen;
+  /* overflow: auto; */
+}
+
+.about-us-header{
+  width: 857.162px;
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 50.842px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.arrange-member-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 320px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.member-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 251px;
+  height: 309px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  /* background: rgba(183, 183, 183, 0.37); */
+  background-color: #0b0029b3;
+  padding: 1.5rem;
+}
+
+.member-info{
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0.5rem;
+}
+
+.mem-img{
+  border-radius: 12px;
+}
+
+.pie-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rem;
+  height: 11rem;
+  width: 80%;
+  background-color: rgba(29, 26, 30, 0.87);
+  border-radius: 12px;
+}
+
+.pie-wrap-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+  width: 100%;
+  margin-top: 20rem;
+  /* background-color: rgba(29, 26, 30, 0.87); */
+  /* border-radius: 12px; */
+}

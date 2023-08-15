@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Zen+Dots&display=swap');
+
+:root{
+    --tri-gradient-bg-1: radial-gradient(circle at top left, #057aa864, #000c19 55%), radial-gradient(ellipse at 90% 100%, #4e0124, #000c19  40%);
+    --tri-gradient-bg-2: radial-gradient(circle at bottom left, #057aa864, #000c19 55%), radial-gradient(ellipse at 90% 0%, #4e0124, #000c19  40%);
+}
+
+.home-body{
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: var(--tri-gradient-bg-1); */
+  background-color: transparent;
+  background-blend-mode: screen;
+  /* overflow: auto; */
+}
+
+.home-navbar{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 85vh;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+    margin-top: 0;
+    width: 100%;
+    height: 15vh;
+}
+
+.home-navbar-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+    margin-left: 1.5rem;
+}
+
+.home-navbar-logo-symbol{
+   height: 5rem;
+   width: 4rem;
+}
+
+.home-navbar-logo p{
+    color: #FFF;
+    font-family: Zen Dots;
+    font-size: 24.215px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.664px;
+}
+
+.home-navbar-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 28%;
+    height: 100%;
+    margin-right: 4rem;
+    cursor: pointer;
+}
+
+.home-main-sec{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 50vh;
+    /* background-color: #a4181847; */
+}
+.nav-link{
+    color: #FFF;
+    font-size: 29.951px;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.polysig-logo{
+    
+    flex-shrink: 0;
+}
+
+.polysig-slogan{
+    /* background-color: aqua; */
+    display: inline-block;
+    flex-direction: column;
+    width: 857.162px;
+    color: #ffffff;
+    /* color: #9088d4; */
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 50.842px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.polysig-slogan span{
+    display: inline-block;
+    margin: 0px;
+    color: #0566c7;
+    font-family: Montserrat;
+    font-size: 50.842px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.get-started-btn{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    width: 520px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-top: 1rem;
+
+    background: linear-gradient(180deg, rgba(82, 125, 236) 0%, rgba(222, 112, 201) 100%);
+
+    color: #FFFCFC;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 30.454px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.swap-toggle-btn{
+    cursor: pointer;
+    transition:all 0.3s ease-in-out;
+    background-color: #000c1956;
+    border-radius: 12px;
+    width: 15rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    color: #000c19;
+}
+.swap-toggle-btn:hover{
+    /* background: linear-gradient(180deg, rgba(82, 125, 236) 0%, rgba(222, 112, 201) 100%); */
+    filter:brightness(2);
+    filter:drop-shadow(0px 6px 6px rgba(52, 0, 92, 0.833));
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+
+.home-main-sec p{
+    color: #000000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 25.414px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+}
+
+.sponsors-credit{
+    /* background-color: #62A6EC; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10vh;
+    margin-bottom: 0px;
+    width: 80%;
+    height: 6rem;
+    gap: 1rem;
+}
+
+.credit-header{
+    color: #000000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+}
+
+.sponsors-list{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem, 2rem;    
+}
