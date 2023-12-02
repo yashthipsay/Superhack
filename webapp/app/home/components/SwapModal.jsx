@@ -216,7 +216,7 @@ const SwapModal = ({showModal, setShowModal}) => {
       zeroxapi + `swap/v1/price?${qs.stringify(params)}`,
       {
         headers: {
-          "0x-api-key": "b3443163-d097-496a-a8d9-5cb11980666b",
+          "0x-api-key": "33ed54fd-e9e4-44c3-8d96-ebc007fe14a9",
         },
       }
     );
@@ -224,7 +224,7 @@ const SwapModal = ({showModal, setShowModal}) => {
       zeroxapi + `swap/v1/quote?${qs.stringify(params)}`,
       {
         headers: {
-          "0x-api-key": "b3443163-d097-496a-a8d9-5cb11980666b",
+          "0x-api-key": "33ed54fd-e9e4-44c3-8d96-ebc007fe14a9",
         },
       }
     );
